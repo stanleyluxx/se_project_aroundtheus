@@ -1,0 +1,27 @@
+.header {
+  margin-top: 45px;
+  max-width: 880px;
+}
+
+.border__bottom {
+  margin-top: 40px;
+  max-width: 880px;
+  opacity: 70%;
+  border-bottom: 1px solid;
+  border-bottom-color: #545454;
+}
+
+@media screen and (max-width:480px) {
+  .header__title {
+    margin-left: 27px;
+  }
+
+}
+
+@media screen and (max-width:464px) {
+  .header__title {
+    margin-left: 27px;
+    max-width: 126px;
+    max-height: 24px;
+  }
+}
