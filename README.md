@@ -10,8 +10,19 @@ This is project 3. An interactive webpage showcasing cards of various locations 
   
 **Images**  
 
- <images/desktop resolution.png>
+<p align="center">
+ <img src="images/desktop resolution.png"
+ alt="desktop resolution image"
+ width="200px"
+ />
 
- <images/tablet resolution.png>
+ <img src="images/tablet resolution.png"
+ alt="tablet resolution image"
+ width="200px"
+ />
 
- <images/desktop resolution.png>
+ <img src="images/desktop resolution.png"
+ alt="desktop resolution image"
+ width="200px"
+ />
+</p>
