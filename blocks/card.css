@@ -1,0 +1,58 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card__list {
+  display: grid;
+  list-style: none;
+  justify-content: center;
+  grid-gap: 20px 17px;
+  grid-template-columns: repeat(auto-fit, 282px);
+}
+
+.card__image {
+  width: 282px;
+  height: 282px;
+  object-fit: cover;
+}
+
+.card__description {
+display: flex;
+background-color: white;
+color: black;
+padding-top: 25px;
+padding-bottom: 25px;
+padding-left: 20px;
+padding-right: 20px;
+align-items: center;
+justify-content: space-between;
+white-space: nowrap;
+}
+
+.card__title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 219px;
+  margin: 0px;
+}
+
+.card__like-button {
+  background: transparent url(../images/Like\ Button.svg) center no-repeat;
+  width: 21px;
+  height: 18px;
+  border-style: hidden;
+  cursor: pointer;
+}
+
+.card__like-button:hover {
+  opacity: 0.5;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+
+

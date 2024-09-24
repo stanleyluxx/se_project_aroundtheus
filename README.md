@@ -2,20 +2,16 @@
 
 ### Overview  
 
-* Intro  
-* Figma  
-* Images  
+This is project 3. An interactive webpage showcasing cards of various locations utilizing grid, flex box, BEM, prettier, and so much more. This webpage was designed to be responsive across mobile, tablet and desktop devices with the use of media queries at specific demensions whenever there are any signs of change in display. A few things I would love to improve on would be; utilizing command line more when navigating/setting up my project, understanding grid, and getting more tricks on flexbox.
   
-**Intro**
+**Video**  
   
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)  
+* [Project 3 Video Presentation](https://drive.google.com/file/d/1BLstGCrfW-CNTc3Z9n0KmazFGhg__CLa/view?usp=drive_link)  
   
 **Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+
+ <images/desktop resolution.png>
+
+ <images/tablet resolution.png>
+
+ <images/desktop resolution.png>

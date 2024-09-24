@@ -1,15 +1,11 @@
 .header {
   margin-top: 45px;
   max-width: 880px;
+  max-height: 74px;
+  border-bottom: 1px solid rgb(84 84 84 / .7);
+  padding-bottom: 35px;
 }
 
-.border__bottom {
-  margin-top: 40px;
-  max-width: 880px;
-  opacity: 70%;
-  border-bottom: 1px solid;
-  border-bottom-color: #545454;
-}
 
 @media screen and (max-width:480px) {
   .header__title {
