@@ -97,7 +97,7 @@ cursor: pointer;
   .profile__description {
     width: 100%;
     text-align: center;
-    margin-bottom: 45px;
+    margin-bottom: 30px;
     margin-top: 10px;
   }
 
@@ -107,8 +107,7 @@ cursor: pointer;
     width: 18px;
   }
   .profile__add-button {
-  margin: 0;
-  margin-bottom: 20px;
+  margin: 0px;
   width: 282px;
   height: 50px;
   }

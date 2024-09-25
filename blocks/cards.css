@@ -1,6 +1,6 @@
 .cards {
 font-family: "Inter", Arial, sans-serif;
-padding: 45px 0 65px;
+padding: 36px 0 65px;
 }
 
 .cards__list {
@@ -9,5 +9,7 @@ padding: 45px 0 65px;
   justify-content: center;
   grid-gap: 20px 17px;
   grid-template-columns: repeat(auto-fit, 282px);
+  margin-top: 0px;
+  margin-bottom: 0px;
   padding-left: 0px;
 }

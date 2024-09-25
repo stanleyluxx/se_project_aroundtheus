@@ -8,6 +8,11 @@
 
 
 @media screen and (max-width:480px) {
+
+  .header {
+    margin-top: 28px;
+  }
+
   .header__title {
     margin-left: 27px;
   }
