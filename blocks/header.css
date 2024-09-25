@@ -16,7 +16,6 @@
 
 @media screen and (max-width:464px) {
   .header__title {
-    margin-left: 27px;
     max-width: 126px;
     max-height: 24px;
   }

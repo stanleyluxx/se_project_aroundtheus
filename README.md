@@ -6,7 +6,7 @@ This is project 3. An interactive webpage showcasing cards of various locations 
   
 **Video**  
   
-* [Project 3 Video Presentation](https://drive.google.com/file/d/1BLstGCrfW-CNTc3Z9n0KmazFGhg__CLa/view?usp=drive_link)  
+* [Project 3 Video Presentation](https://drive.google.com/file/d/1BLstGCrfW-CNTc3Z9n0KmazFGhg__CLa/view?usp=sharing)  
   
 **Images**  
 

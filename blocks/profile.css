@@ -1,5 +1,6 @@
 .profile {
 display: flex;
+align-items: center;
 padding-top: 40px;
 max-width: 880px;
 }
@@ -46,7 +47,7 @@ background-position: center;
 background: transparent url(../images/Edit\ Button.svg) center no-repeat;
 height: 24px;
 width: 24px;
-border-radius: 1px;
+border-width: 1px;
 grid-area: button;
 border-color: #ffff;
 border-style: solid;
@@ -83,7 +84,6 @@ cursor: pointer;
 @media screen and (max-width:740px) {
   .profile {
     flex-direction: column;
-    align-items: center;
   }
 
   .profile__info {

@@ -3,3 +3,11 @@ font-family: "Inter", Arial, sans-serif;
 padding: 45px 0 65px;
 }
 
+.cards__list {
+  display: grid;
+  list-style: none;
+  justify-content: center;
+  grid-gap: 20px 17px;
+  grid-template-columns: repeat(auto-fit, 282px);
+  padding-left: 0px;
+}
