@@ -7,6 +7,10 @@ This is project 3. An interactive webpage showcasing cards of various locations 
 **Video**  
   
 * [Project 3 Video Presentation](https://drive.google.com/file/d/1BLstGCrfW-CNTc3Z9n0KmazFGhg__CLa/view?usp=sharing)  
+
+**GitHub Pages Project 3 Link**
+
+* [Project 3 Link](https://stanleyluxx.github.io/se_project_aroundtheus/)
   
 **Images**  
 

@@ -15,26 +15,31 @@ background-position: center;
 }
 
 .profile__title {
-  text-overflow: ellipsis;
-  overflow: hidden;
   font-family: "Inter", Arial, sans-serif;
   font-size: 42px;
   line-height: 48px;
   font-weight: 500;
   margin: 0px;
   grid-area: title;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 373px;
 }
 
 .profile__description {
-  text-overflow: ellipsis;
-  overflow: hidden;
   font-family: "Inter", Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
-  margin-top: 0px;
+  margin-top: 10px;
   margin-bottom: 0px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 415px;
 }
+
 .profile__info {
   display: grid;
   grid-template-areas: "title button"
@@ -98,7 +103,6 @@ cursor: pointer;
     width: 100%;
     text-align: center;
     margin-bottom: 30px;
-    margin-top: 10px;
   }
 
   .profile__edit-button {
@@ -134,7 +138,6 @@ cursor: pointer;
   .profile__description {
     font-size: 14px;
     line-height: 16.94px;
-    margin-top: 10px;
   }
 }
 
