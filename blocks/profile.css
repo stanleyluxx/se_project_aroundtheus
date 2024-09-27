@@ -1,8 +1,8 @@
 .profile {
-display: flex;
-align-items: center;
-padding-top: 40px;
-max-width: 880px;
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  max-width: 880px;
 }
 
 .profile__image {
@@ -10,8 +10,7 @@ max-width: 880px;
   height: 120px;
   width: 120px;
   object-fit: cover;
-background-position: center;
-
+  background-position: center;
 }
 
 .profile__title {
@@ -42,23 +41,24 @@ background-position: center;
 
 .profile__info {
   display: grid;
-  grid-template-areas: "title button"
-  "description description";
-  grid-template-columns: minmax(auto,373px) auto;
+  grid-template-areas:
+    "title button"
+    "description description";
+  grid-template-columns: minmax(auto, 373px) auto;
   margin-left: 30px;
 }
 
 .profile__edit-button {
-background: transparent url(../images/Edit\ Button.svg) center no-repeat;
-height: 24px;
-width: 24px;
-border-width: 1px;
-grid-area: button;
-border-color: #ffff;
-border-style: solid;
-margin-top: 15px;
-margin-left: 4px;
-cursor: pointer;
+  background: transparent url(../images/Edit\ Button.svg) center no-repeat;
+  height: 24px;
+  width: 24px;
+  border-width: 1px;
+  grid-area: button;
+  border-color: #ffff;
+  border-style: solid;
+  margin-top: 15px;
+  margin-left: 4px;
+  cursor: pointer;
 }
 
 .profile__edit-button:hover {
@@ -86,7 +86,7 @@ cursor: pointer;
   transition-timing-function: linear;
 }
 
-@media screen and (max-width:740px) {
+@media screen and (max-width: 740px) {
   .profile {
     flex-direction: column;
   }
@@ -96,7 +96,6 @@ cursor: pointer;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 25px;
-
   }
 
   .profile__description {
@@ -111,18 +110,18 @@ cursor: pointer;
     width: 18px;
   }
   .profile__add-button {
-  margin: 0px;
-  width: 282px;
-  height: 50px;
+    margin: 0px;
+    width: 282px;
+    height: 50px;
   }
-
 }
 
-@media screen and (max-width:464px) {
+@media screen and (max-width: 464px) {
   .profile__title {
     font-size: 22px;
     line-height: 26.63px;
     margin-left: 35px;
+    max-width: 200px;
   }
 
   .profile__info {
@@ -138,8 +137,6 @@ cursor: pointer;
   .profile__description {
     font-size: 14px;
     line-height: 16.94px;
+    max-width: 280px;
   }
 }
-
-
-
