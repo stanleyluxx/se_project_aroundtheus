@@ -9,7 +9,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   visibility: hidden;
 }
-.modal__modal-opened {
+.modal_opened {
   visibility: visible;
 }
 .modal__container {
@@ -87,7 +87,7 @@
   transition-timing-function: linear;
 }
 
-.modal__form-fieldset--title {
+.modal__input_type_title {
   border-style: none;
   font-family: "Inter", Arial, sans-serif;
   font-weight: 400;
@@ -95,7 +95,7 @@
   color: #000000;
   line-height: 16.94px;
 }
-.modal__form-fieldset--description {
+.modal__input_type_description {
   border-style: none;
   padding-top: 29.74px;
   font-family: "Inter", Arial, sans-serif;
@@ -105,7 +105,7 @@
   color: #000000;
 }
 
-.modal__form-fieldset {
+.modal__fieldset {
   margin: 0;
   padding-left: 0px;
   border-bottom: 1px solid #000000;
@@ -135,7 +135,7 @@
     right: -30px;
   }
 
-  .modal__form-fieldset {
+  .modal__fieldset {
     width: 238px;
     align-self: center;
   }
