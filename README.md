@@ -2,7 +2,8 @@
 
 ### Overview  
 
-This is project 4. An interactive webpage showcasing cards of various locations utilizing Html/Css, Javascript, grid, flex box, BEM, prettier, and so much more. This webpage was designed to be responsive across mobile, tablet and desktop devices with the use of media queries at specific demensions whenever there are any signs of change in display. A few things I would love to improve on would be; utilizing command line more when navigating/setting up my project, understanding grid, and getting more tricks on flexbox.
+This is an independant project for Tripleten. An interactive webpage showcasing cards of various locations utilizing Html/CSS, JavaScript, grid, flex box, BEM, prettier, and so much more. This webpage was designed to be responsive across mobile, tablet and desktop devices with the use of media queries at specific dimensions whenever there are any signs of change in display. A few things I would love to improve on would be adding modal container elements to the cards to where it is responsive after you click on a photo and reveals more backstory behind the location.  
+
   
 **Video**  
   
