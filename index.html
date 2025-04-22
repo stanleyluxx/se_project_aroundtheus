@@ -31,10 +31,18 @@
           />
           <div class="profile__info">
             <h1 class="profile__title">jacques Cousteau</h1>
-            <button class="button button_type_edit" id="open-edit-btn" type="button"></button>
+            <button
+              class="button button_type_edit"
+              id="open-edit-btn"
+              type="button"
+            ></button>
             <p class="profile__description">Explorer</p>
           </div>
-          <button class="button button_type_add" id="open-add-btn" type="button"></button>
+          <button
+            class="button button_type_add"
+            id="open-add-btn"
+            type="button"
+          ></button>
         </section>
         <!--Cards-->
         <section class="cards page__section">
@@ -42,14 +50,12 @@
             <template id="card-template">
               <div class="card">
                 <button class="card__delete-button" type="button"></button>
-                <img class="card__image" src="" alt="">
-                <div
-                class="card__description">
-                <h2 class="card__title"></h2>
-                <button class="card__like-button" type="button"></button>
+                <img class="card__image" src="" alt="" />
+                <div class="card__description">
+                  <h2 class="card__title"></h2>
+                  <button class="card__like-button" type="button"></button>
+                </div>
               </div>
-              </div>
-            </div>
             </template>
           </ul>
         </section>
@@ -62,7 +68,7 @@
     <div class="modal modal_type-image" id="image-popup">
       <div class="modal__image-content">
         <button type="button" class="modal__image-close-button"></button>
-        <img src="" alt="" class="modal__image">
+        <img src="" alt="" class="modal__image" />
         <p class="modal__image-caption"></p>
       </div>
     </div>
@@ -94,36 +100,39 @@
           <button class="modal__button" type="submit">Save</button>
         </form>
       </div>
-      </div>
-        <!--Create Form-->
-        <div class="modal modal_type_add" id="modal-add">
-          <div class="modal__create-container">
-            <button class="modal__create-close" id="modal-create-close-button"></button>
+    </div>
+    <!--Create Form-->
+    <div class="modal modal_type_add" id="modal-add">
+      <div class="modal__create-container">
+        <button
+          class="modal__create-close"
+          id="modal-create-close-button"
+        ></button>
 
-            <form class="modal__create-form" id="modal-create-form">
-              <p class="modal__create-heading">New Place</p>
-              <fieldset class="modal__create-fieldset">
-                <input
-                  type="text"
-                  name="title"
-                  placeholder="Title"
-                  class="modal__create-input modal__create-input-type-title"
-                  id="profile-create-title-input"
-                />
-              </fieldset>
-              <fieldset class="modal__create-fieldset">
-                <input
-                  type="text"
-                  name="description"
-                  placeholder="Image Link"
-                  class="modal__create-input modal__create-input-type-description"
-                  id="profile-image-link-input"
-                />
-              </fieldset>
-              <button class="modal__create-button" type="submit">Create</button>
-            </form>
-       </div>
+        <form class="modal__create-form" id="modal-create-form">
+          <p class="modal__create-heading">New Place</p>
+          <fieldset class="modal__create-fieldset">
+            <input
+              type="text"
+              name="title"
+              placeholder="Title"
+              class="modal__create-input modal__create-input-type-title"
+              id="profile-create-title-input"
+            />
+          </fieldset>
+          <fieldset class="modal__create-fieldset">
+            <input
+              type="text"
+              name="description"
+              placeholder="Image Link"
+              class="modal__create-input modal__create-input-type-description"
+              id="profile-image-link-input"
+            />
+          </fieldset>
+          <button class="modal__create-button" type="submit">Create</button>
+        </form>
       </div>
+    </div>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
