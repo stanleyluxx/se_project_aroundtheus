@@ -150,6 +150,13 @@
   right: -45px;
 }
 
+.modal__create-close:hover {
+  opacity: 0.8;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+
 .modal__create-form {
   display: flex;
   flex-direction: column;
@@ -228,8 +235,58 @@
   transition-timing-function: linear;
 }
 
+/* modal image */
+
+.modal_type-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__image-content {
+  position: relative;
+}
+
+.modal__image {
+  max-width: 75vw;
+  max-height: 75vh;
+}
+
+.modal__image-close-button {
+  background-image: url("../images/Close\ Icon.svg");
+  cursor: pointer;
+  position: absolute;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  bottom: calc(100% + 10px);
+  left: calc(100% + 10px);
+}
+.modal__image-close-button:hover {
+  opacity: 0.6;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+
+.modal__image-caption {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
 @media screen and (max-width: 523px) {
   .modal__container {
+    width: 282px;
+    height: 322px;
+  }
+
+  .modal__create-container {
     width: 282px;
     height: 322px;
   }
@@ -241,7 +298,21 @@
     align-self: center;
   }
 
+  .modal__create-button {
+    height: 46px;
+    font-size: 14px;
+    line-height: 16.94px;
+    align-self: center;
+  }
+
   .modal__close {
+    width: 26px;
+    height: 26px;
+    top: -30px;
+    right: -30px;
+  }
+
+  .modal__create-close {
     width: 26px;
     height: 26px;
     top: -30px;
@@ -269,5 +340,12 @@
 
   .modal__button {
     width: 238px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .modal__image-close-button {
+    height: 30px;
+    width: 30px;
   }
 }

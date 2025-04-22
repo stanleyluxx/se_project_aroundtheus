@@ -34,3 +34,20 @@
   transition-duration: 0.3s;
   transition-timing-function: linear;
 }
+
+@media screen and (max-width:739px) {
+  .button.button_type_add {
+    margin-left: 0;
+    width: 282px;
+  }
+
+  .button.button_type_edit {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width:460px) {
+  .button.button_type_edit {
+    margin-top: 1px;
+  }
+}
