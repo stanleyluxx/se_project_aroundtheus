@@ -154,7 +154,15 @@ function handleAddFormSubmit(e) {
 /*------------------*/
 
 // Edit Modal
-editButton.addEventListener("click", () => openModal(editModal));
+editButton.addEventListener("click", () => {
+
+  profileTitleInput.value = profileTitle.textContent;
+  profileDescriptionInput.value = profileDescription.textContent;
+
+
+  openModal(editModal);
+});
+
 closeEditButton.addEventListener("click", () => closeModal(editModal));
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 

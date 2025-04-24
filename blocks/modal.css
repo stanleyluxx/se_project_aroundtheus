@@ -39,7 +39,7 @@
 }
 
 .modal__close {
-  background-image: url("../images/Close\ Icon.svg");
+  background-image: url("../images/close-icon.svg");
   cursor: pointer;
   position: absolute;
   background-size: contain;
@@ -136,7 +136,7 @@
 }
 
 .modal__create-close {
-  background-image: url("../images/Close\ Icon.svg");
+  background-image: url("../images/close-icon.svg");
   cursor: pointer;
   position: absolute;
   background-size: contain;
@@ -253,7 +253,7 @@
 }
 
 .modal__image-close-button {
-  background-image: url("../images/Close\ Icon.svg");
+  background-image: url("../images/close-icon.svg");
   cursor: pointer;
   position: absolute;
   background-size: contain;
