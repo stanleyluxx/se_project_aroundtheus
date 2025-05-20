@@ -77,27 +77,39 @@
       <div class="modal__container">
         <button class="modal__close" id="modal-close-button"></button>
 
-        <form class="modal__form" id="modal-form">
+        <form class="modal__form" id="modal-form" novalidate>
           <p class="modal__heading">Edit Profile</p>
           <fieldset class="modal__fieldset">
             <input
               type="text"
               name="title"
               placeholder="Jacques Cousteau"
-              class="modal__input modal__input_type_title"
-              id="profile-title-input"
+              class="modal__input modal__input-type-title"
+              id="owner-name"
+              required
+              minlength="2"
+              maxlength="40"
             />
+            <span class="modal__input_type_error" id="owner-name-error"></span>
           </fieldset>
           <fieldset class="modal__fieldset">
             <input
               type="text"
               name="description"
               placeholder="Explorer"
-              class="modal__input modal__input_type_description"
-              id="profile-description-input"
+              class="modal__input modal__input-type-description"
+              id="owner-description"
+              required
+              minlength="2"
+              maxlength="200"
             />
+            <span class="modal__input_type_error" id="owner-description-error"></span>
           </fieldset>
-          <button class="modal__button" type="submit">Save</button>
+          <button class="modal__button modal__button_disabled"
+          type="submit"
+          disabled
+          >Save
+        </button>
         </form>
       </div>
     </div>
@@ -109,30 +121,41 @@
           id="modal-create-close-button"
         ></button>
 
-        <form class="modal__create-form" id="modal-create-form">
+        <form class="modal__form modal__create-form" id="modal-create-form" novalidate>
           <p class="modal__create-heading">New Place</p>
           <fieldset class="modal__create-fieldset">
             <input
-              type="text"
+              type="title"
               name="title"
               placeholder="Title"
-              class="modal__create-input modal__create-input-type-title"
-              id="profile-create-title-input"
+              class="modal__input modal__create-input-type-title"
+              id="place-title"
+              required
+              minlength="1"
+              maxlength="30"
             />
+            <span class="modal__input_type_error" id="place-title-error"></span>
           </fieldset>
           <fieldset class="modal__create-fieldset">
             <input
               type="url"
               name="description"
               placeholder="Image Link"
-              class="modal__create-input modal__create-input-type-description"
-              id="profile-image-link-input"
+              class="modal__input modal__create-input-type-link"
+              id="image-link-input"
+              required
             />
+            <span class="modal__input_type_error" id="image-link-error"></span>
           </fieldset>
-          <button class="modal__create-button" type="submit">Create</button>
+          <button class="modal__button modal__create-button modal__button_disabled"
+          type="submit"
+          disabled
+          >Create
+        </button>
         </form>
       </div>
     </div>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
   </body>
 </html>
