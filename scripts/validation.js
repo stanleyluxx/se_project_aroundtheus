@@ -39,8 +39,10 @@ function hideInputError(
 function checkInputValidity(formElement, inputElement, config) {
   if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, config);
+    inputElement.classList.remove("modal__input_valid");
   } else {
     hideInputError(formElement, inputElement, config);
+    inputElement.classList.add("modal__input_valid");
   }
 }
 
