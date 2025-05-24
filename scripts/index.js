@@ -143,10 +143,9 @@ function handleAddFormSubmit(e) {
 
   cardListEl.prepend(getCardElement(newCard));
 
-  profileCreateTitleInput.value = "";
-  profileImageLinkInput.value = "";
+  e.target.reset();
 
-  closeModal(addModal);
+  resetValidation(e.target, config);
 }
 
 /*------------------*/
@@ -162,36 +161,15 @@ editButton.addEventListener("click", () => {
 });
 // edit modal close button function
 closeEditButton.addEventListener("click", () => closeModal(editModal));
-// edit modal keydown function
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closeModal(editModal);
-  }
-});
-// edit modal mousedown function
-editModal.addEventListener("mousedown", (e) => {
-  if (e.target === editModal) {
-    closeModal(editModal);
-  }
-});
+
+
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 // Add Modal
 addButton.addEventListener("click", () => openModal(addModal));
 closeAddButton.addEventListener("click", () => closeModal(addModal));
-//add modal keydown function
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closeModal(addModal);
-  }
-});
-// add modal mousedown function
-addModal.addEventListener("mousedown", (e) => {
-  if (e.target === addModal) {
-    closeModal(addModal);
-  }
-});
+
 
 addForm.addEventListener("submit", handleAddFormSubmit);
 
@@ -202,15 +180,34 @@ initialCards.forEach((cardData) => {
 
 // popup image close function
 modalImageClose.addEventListener("click", () => closeModal(imageModal));
-//image keydown function
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closeModal(imageModal);
-  }
+
+
+//Modals mousedouwn Function
+const modals = document.querySelectorAll(".modal");
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (e) => {
+    if (e.target === modal) {
+      closeModal(modal);
+    }
+  });
 });
-//image mousedown function
-imageModal.addEventListener("mousedown", (e) => {
-  if (e.target === imageModal) {
-    closeModal(imageModal);
+
+//Modals keydown function
+function handleEscape(evt) {
+  if (evt.key === 'Escape') {
+    const openedModal = document.querySelector('.modal_opened');
+    if (openedModal) {
+      closeModal(openedModal);
+    }
   }
-});
+}
+
+function openModal(modal) {
+  modal.classList.add('modal_opened');
+  document.addEventListener('keydown', handleEscape);
+}
+
+function closeModal(modal) {
+  modal.classList.remove('modal_opened');
+  document.removeEventListener('keydown', handleEscape);
+}
