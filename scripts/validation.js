@@ -1,5 +1,4 @@
 
-
 function showInputError(
   formElement,
   inputElement,
@@ -28,14 +27,17 @@ function hideInputError(
 }
 
 function checkInputValidity(formElement, inputElement, config) {
+  const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
+
   if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, config);
-    inputElement.classList.remove("modal__input_type_error");
+    inputElement.classList.add(config.inputErrorClass);
+    errorElement.textContent = inputElement.validationMessage;
+    errorElement.classList.add(config.errorClass);
   } else {
-    hideInputError(formElement, inputElement, config);
-    inputElement.classList.add("modal__input_type_error");
+    inputElement.classList.remove(config.inputErrorClass);
+    errorElement.textContent = "";
+    errorElement.classList.remove(config.errorClass);
   }
-  checkInputValidity(config);
 }
 
 

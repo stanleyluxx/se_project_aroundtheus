@@ -13,7 +13,9 @@
   </head>
   <body class="page">
     <div class="page__content">
+
       <!--Header-->
+
       <header class="header page__section">
         <img
           src="./images/Logo.svg"
@@ -22,7 +24,9 @@
         />
       </header>
       <main>
+
         <!--Profile-->
+
         <section class="profile page__section">
           <img
             src="./images/jacques-cousteau.jpg"
@@ -44,7 +48,9 @@
             type="button"
           ></button>
         </section>
+
         <!--Cards-->
+
         <section class="cards page__section">
           <ul class="cards__list">
             <template id="card-template">
@@ -64,7 +70,9 @@
         <p class="footer__copyright">&copy;2024 Around The U.S.</p>
       </footer>
     </div>
+
     <!--modal image pop-up-->
+
     <div class="modal modal_type-image" id="image-popup">
       <div class="modal__image-content">
         <button type="button" class="modal__image-close-button"></button>
@@ -72,7 +80,9 @@
         <p class="modal__image-caption"></p>
       </div>
     </div>
+
     <!--Edit Profile Form-->
+
     <div class="modal modal_type_edit" id="modal-edit">
       <div class="modal__container">
         <button class="modal__close" id="modal-close-button"></button>
@@ -103,21 +113,17 @@
               minlength="2"
               maxlength="200"
             />
-            <span
-              class="modal__error"
-              id="owner-description-error"
-            ></span>
+            <span class="modal__error" id="owner-description-error"></span>
           </fieldset>
-          <button
-            class="modal__button modal__button_disabled"
-            type="submit"
-          >
+          <button class="modal__button modal__button_disabled" type="submit">
             Save
           </button>
         </form>
       </div>
     </div>
+
     <!--Create Form-->
+    
     <div class="modal modal_type_add" id="modal-add">
       <div class="modal__create-container">
         <button
@@ -147,13 +153,13 @@
           <fieldset class="modal__create-fieldset">
             <input
               type="url"
-              name="description"
+              name="link"
               placeholder="Image Link"
-              class="modal__input modal__create-input-type-link"
+              class="modal__input modal__input-type-link"
               id="image-link-input"
               required
             />
-            <span class="modal__error" id="image-link-error"></span>
+            <span class="modal__error" id="image-link-input-error"></span>
           </fieldset>
           <button
             class="modal__button modal__create-button modal__button_disabled"
