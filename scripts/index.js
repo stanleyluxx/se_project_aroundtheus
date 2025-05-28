@@ -56,7 +56,7 @@ const profileCreateTitleInput = document.querySelector(
   ".modal__create-input-type-title"
 );
 const profileImageLinkInput = document.querySelector(
-  ".modal__create-input-type-link"
+  ".modal__input-type-link"
 );
 const addForm = document.querySelector("#modal-create-form");
 //image popup elements
@@ -144,6 +144,12 @@ function handleAddFormSubmit(e) {
   cardListEl.prepend(getCardElement(newCard));
 
   e.target.reset();
+
+  disableButton(submitButton, config.inactiveButtonClass);
+
+
+  closeModal(profileCreateModal);
+
 
   resetValidation(e.target, config);
 }

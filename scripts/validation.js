@@ -68,20 +68,19 @@ function toggleButtonState(
     return;
   }
   enableButton(submitButton, inactiveButtonClass);
-  toggleButtonState();
 }
 
 //set Event Listeners
 function setEventListeners(formElement, config) {
   const inputElements = Array.from(formElement.querySelectorAll(config.inputSelector));
-  const submitButton = formElement.querySelector(".modal__button");
+  const submitButton = formElement.querySelector(config.submitButtonSelector);
   inputElements.forEach((inputElement) => {
     inputElement.addEventListener("input", (e) => {
       checkInputValidity(formElement, inputElement, config);
       toggleButtonState(
         inputElements,
         submitButton,
-        config.inactiveButtonClass
+        config
       );
     });
   });
@@ -106,13 +105,8 @@ function resetValidation(formElement, config) {
   const submitButton = formElement.querySelector(config.submitButtonSelector);
 
   inputElements.forEach((input) => {
-    input.classList.remove(config.inputErrorClass, "modal__input_valid");
-  });
-
-  errorMessages.forEach((errorEl) => {
-    errorEl.textContent = "";
-    errorEl.classList.remove(config.errorClass);
-  });
+    hideInputError(formElement, input, config);
+});
 
   disableButton(submitButton, config.inactiveButtonClass);
 }
