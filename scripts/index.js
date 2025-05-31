@@ -55,9 +55,7 @@ const cardTemplate = document.querySelector("#card-template");
 const profileCreateTitleInput = document.querySelector(
   ".modal__create-input-type-title"
 );
-const profileImageLinkInput = document.querySelector(
-  ".modal__input-type-link"
-);
+const profileImageLinkInput = document.querySelector(".modal__input-type-link");
 const addForm = document.querySelector("#modal-create-form");
 //image popup elements
 const imageModal = document.querySelector("#image-popup");
@@ -147,9 +145,7 @@ function handleAddFormSubmit(e) {
 
   disableButton(submitButton, config.inactiveButtonClass);
 
-
   closeModal(profileCreateModal);
-
 
   resetValidation(e.target, config);
 }
@@ -163,19 +159,18 @@ editButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
 
-  openModal(editModal);
+  resetValidation(profileEditForm, config);
+
+openModal(editModal);
 });
 // edit modal close button function
 closeEditButton.addEventListener("click", () => closeModal(editModal));
-
-
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 // Add Modal
 addButton.addEventListener("click", () => openModal(addModal));
 closeAddButton.addEventListener("click", () => closeModal(addModal));
-
 
 addForm.addEventListener("submit", handleAddFormSubmit);
 
@@ -186,7 +181,6 @@ initialCards.forEach((cardData) => {
 
 // popup image close function
 modalImageClose.addEventListener("click", () => closeModal(imageModal));
-
 
 //Modals mousedouwn Function
 const modals = document.querySelectorAll(".modal");
@@ -200,8 +194,8 @@ modals.forEach((modal) => {
 
 //Modals keydown function
 function handleEscape(evt) {
-  if (evt.key === 'Escape') {
-    const openedModal = document.querySelector('.modal_opened');
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_opened");
     if (openedModal) {
       closeModal(openedModal);
     }
@@ -209,11 +203,11 @@ function handleEscape(evt) {
 }
 
 function openModal(modal) {
-  modal.classList.add('modal_opened');
-  document.addEventListener('keydown', handleEscape);
+  modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscape);
 }
 
 function closeModal(modal) {
-  modal.classList.remove('modal_opened');
-  document.removeEventListener('keydown', handleEscape);
+  modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscape);
 }
