@@ -143,9 +143,7 @@ function handleAddFormSubmit(e) {
 
   e.target.reset();
 
-  disableButton(submitButton, config.inactiveButtonClass);
-
-  closeModal(profileCreateModal);
+  closeModal(addModal);
 
   resetValidation(e.target, config);
 }
@@ -161,7 +159,7 @@ editButton.addEventListener("click", () => {
 
   resetValidation(profileEditForm, config);
 
-openModal(editModal);
+  openModal(editModal);
 });
 // edit modal close button function
 closeEditButton.addEventListener("click", () => closeModal(editModal));
