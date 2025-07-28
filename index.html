@@ -85,7 +85,7 @@
       <div class="modal__container">
         <button class="modal__close" id="modal-close-button"></button>
 
-        <form class="modal__form" id="modal-form" novalidate>
+        <form class="modal__form" id="modal-edit-form" novalidate>
           <p class="modal__heading">Edit Profile</p>
           <fieldset class="modal__fieldset">
             <input
@@ -113,9 +113,7 @@
             />
             <span class="modal__error" id="owner-description-error"></span>
           </fieldset>
-          <button class="modal__button modal__button_disabled" type="submit">
-            Save
-          </button>
+          <button class="modal__button" type="submit">Save</button>
         </form>
       </div>
     </div>
@@ -159,16 +157,13 @@
             />
             <span class="modal__error" id="image-link-input-error"></span>
           </fieldset>
-          <button
-            class="modal__button modal__create-button modal__button_disabled"
-            type="submit"
-          >
+          <button class="modal__button modal__create-button" type="submit">
             Create
           </button>
         </form>
       </div>
     </div>
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/validation.js"></script>
+    <script src="./pages/index.js" type="module"></script>
+    <script src="./components/FormValidator.js" type="module"></script>
   </body>
 </html>
