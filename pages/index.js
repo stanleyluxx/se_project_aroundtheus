@@ -1,5 +1,5 @@
 // Cards
-import Card from "../components/card.js";
+import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 
 const cardData = [
@@ -180,10 +180,6 @@ profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 // Add Modal
 addButton.addEventListener("click", () => {
-  // Clear the input fields when opening the add card modal
-  profileCreateTitleInput.value = "";
-  profileImageLinkInput.value = "";
-  addCardValidator.resetValidation(); // Reset validation state for the add card form
   openModal(addModal);
 });
 closeAddButton.addEventListener("click", () => closeModal(addModal));
@@ -192,8 +188,7 @@ addCardForm.addEventListener("submit", handleAddFormSubmit); // Changed to addCa
 
 // Initial Card Rendering
 cardData.forEach((data) => {
-  const card = new Card(data, cardTemplateSelector, handleImageClick);
-  cardListEl.append(card.getView());
+  renderCard(data, cardListEl);
 });
 
 // popup image close function
