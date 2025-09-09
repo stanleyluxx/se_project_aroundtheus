@@ -47,7 +47,7 @@
   left: 250px;
   border-style: hidden;
   position: relative;
-  z-index: 1px;
+  z-index: 1;
   cursor: pointer;
 }
 
