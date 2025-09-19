@@ -32,8 +32,8 @@ const cardSection = new Section(
   {
     items: cardData,
     renderer: (item) => {
-    const cardElement = createCard(item);
-    return cardElement;
+      const cardElement = createCard(item);
+      return cardElement;
     },
   },
   ".cards__list"
@@ -54,33 +54,10 @@ imagePopup.setEventListeners();
 const editProfilePopup = new PopupWithForm("#modal-edit", (formData) => {
   userInfo.setUserInfo({
     name: formData["title"],
-    job: formData["description"]
+    job: formData["description"],
   });
 });
 editProfilePopup.setEventListeners();
-
-// Add Card Popup
-const addCardPopup = new PopupWithForm("#modal-add", (formData) => {
-  const newCardData = {
-    name: formData["title"],
-    link: formData["link"],
-  };
- const newCardElement = createCard(newCardData);
-  cardSection.addItem(newCardElement);
-
-});
-addCardPopup.setEventListeners();
-
-addButton.addEventListener("click", () => {
-  addCardPopup.open();
-});
-
-editButton.addEventListener("click", () => {
-  const currentUserInfo = userInfo.getUserInfo();
-  profileTitleInput.value = currentUserInfo.name;
-  profileDescriptionInput.value = currentUserInfo.job;
-  editProfilePopup.open();
-});
 
 //FormValidator Class Instance
 const editFormValidator = new FormValidator(settings, editProfileFormElement);
@@ -92,3 +69,28 @@ addCardValidator.enableValidation();
 function handleImageClick(name, link) {
   imagePopup.open({ name, link });
 }
+
+// Add Card Popup
+const addCardPopup = new PopupWithForm("#modal-add", (formData) => {
+  const newCardData = {
+    name: formData["title"],
+    link: formData["link"],
+  };
+  const newCardElement = createCard(newCardData);
+  cardSection.addItem(newCardElement);
+});
+addCardPopup.setEventListeners();
+
+addButton.addEventListener("click", () => {
+  addCardPopup.open();
+});
+
+editButton.addEventListener("click", () => {
+  const currentUserInfo = userInfo.getUserInfo();
+  profileTitleInput.value = currentUserInfo.name;
+  profileDescriptionInput.value = currentUserInfo.job;
+
+  editFormValidator.resetValidation();
+
+  editProfilePopup.open();
+});
