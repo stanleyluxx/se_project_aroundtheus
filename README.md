@@ -14,9 +14,10 @@ This is an independant project for Tripleten. An interactive webpage showcasing 
 
 **Images**
 
-<img src="<img src ="https://github.com/user-attachments/assets/e8187905-bec7-4cbf-a511-c87e633822de" />
-"
+<img src ="https://github.com/user-attachments/assets/e8187905-bec7-4cbf-a511-c87e633822de"
  alt="desktop resolution image"
- width="500px"
- />
+ width="500px"/>
+
+ 
+
 
