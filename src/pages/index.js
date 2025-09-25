@@ -19,6 +19,7 @@ import {
   addCardFormElement,
   cardTemplateSelector,
 } from "../utils/utils.js";
+import { Api } from "../utils/Api.js";
 
 //UserInfo Instance
 const userInfo = new UserInfo({
@@ -30,7 +31,7 @@ const userInfo = new UserInfo({
 
 const cardSection = new Section(
   {
-    items: cardData,
+    items: [],
     renderer: (item) => {
       const cardElement = createCard(item);
       return cardElement;
@@ -38,8 +39,6 @@ const cardSection = new Section(
   },
   ".cards__list"
 );
-
-cardSection.renderItems();
 
 function createCard(data) {
   const card = new Card(data, cardTemplateSelector, handleImageClick);
@@ -72,12 +71,18 @@ function handleImageClick(name, link) {
 
 // Add Card Popup
 const addCardPopup = new PopupWithForm("#modal-add", (formData) => {
-  const newCardData = {
+  api.addCard({
     name: formData["title"],
     link: formData["link"],
-  };
-  const newCardElement = createCard(newCardData);
-  cardSection.addItem(newCardElement);
+  })
+  .then((cardData) => {
+    const newCardElement = createCard(cardData);
+    cardSection.addItem(newCardElement);
+    addCardPopup.close(); // close modal after success
+  })
+  .catch((err) => {
+    console.error("Failed to add card:", err);
+  });
 });
 addCardPopup.setEventListeners();
 
@@ -94,3 +99,27 @@ editButton.addEventListener("click", () => {
 
   editProfilePopup.open();
 });
+
+//API Instance And Method Calls
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+ headers: {
+    authorization: "5cdcdfef-c3b6-49d6-830b-7f0207542704",
+    "Content-Type": "application/json"
+ }
+});
+
+api.getAppInfo()
+.then(([userData, cards]) => {
+    // set user info
+    userInfo.setUserInfo({
+      name: userData.name,
+      job: userData.about
+    });
+
+    // render cards
+    cardSection.renderItems(cards);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
