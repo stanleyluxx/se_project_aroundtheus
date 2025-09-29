@@ -22,14 +22,47 @@
         />
       </header>
       <main>
+        <!--change profile avatar popup-->
+
+        <div class="modal modal__type-avatar" id="modal-avatar">
+          <div class="modal__avatar-container">
+            <button
+              type="button"
+              class="modal__close modal__close-button"
+            ></button>
+            <h3 class="modal__edit-title">Change profile picture</h3>
+            <form
+              class="modal__form modal__form_type_avatar"
+              name="avatar-form"
+            >
+              <input
+                type="url"
+                name="avatar"
+                class="modal__input"
+                placeholder="Image link"
+                required
+              />
+              <span class="modal__error" id="avatar-error"></span>
+              <button type="submit" class="modal__avatar-submit">Save</button>
+            </form>
+          </div>
+        </div>
+
         <!--Profile-->
 
         <section class="profile page__section">
-          <img
-            src="<%=require('./images/jacques-cousteau.jpg')%>"
-            alt="Profile Avatar"
-            class="profile__image"
-          />
+          <div class="profile__avatar-container">
+            <img
+              src="<%=require('./images/jacques-cousteau.jpg')%>"
+              alt="Profile Avatar"
+              class="profile__avatar"
+            />
+            <button
+              type="button"
+              class="profile__avatar-edit-button"
+              aria-label="Edit avatar"
+            ></button>
+          </div>
           <div class="profile__info">
             <h1 class="profile__title">jacques Cousteau</h1>
             <button
@@ -66,6 +99,21 @@
       <footer class="footer page__section">
         <p class="footer__copyright">&copy;2024 Around The U.S.</p>
       </footer>
+    </div>
+
+    <!-- Delete Card Popup -->
+
+    <div class="modal modal_type_delete" id="delete-card-popup">
+      <div class="modal__delete-container">
+        <button type="button" class="modal__close modal__close-button"></button>
+        <h3 class="modal__delete-title">Are you sure?</h3>
+        <form
+          class="modal__form modal__form_type_delete"
+          name="delete-card-form"
+        >
+          <button type="submit" class="modal__delete-button">Yes</button>
+        </form>
+      </div>
     </div>
 
     <!--modal image pop-up-->
@@ -124,7 +172,10 @@
 
     <div class="modal modal_type_add" id="modal-add">
       <div class="modal__create-container">
-        <button type="button" class="modal__create-close modal__close-button"></button>
+        <button
+          type="button"
+          class="modal__create-close modal__close-button"
+        ></button>
 
         <form
           class="modal__form modal__create-form"

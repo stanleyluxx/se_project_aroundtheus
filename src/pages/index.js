@@ -5,14 +5,13 @@ import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
 import "./index.css";
 import {
-  cardData,
   settings,
   editButton,
   addButton,
-  profileTitle,
-  profileDescription,
+  avatarEditButton,
   profileTitleInput,
   profileDescriptionInput,
   editProfileFormElement,
@@ -21,6 +20,15 @@ import {
 } from "../utils/utils.js";
 import { Api } from "../utils/Api.js";
 
+//API Instance And Method Calls
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+ headers: {
+    authorization: "5cdcdfef-c3b6-49d6-830b-7f0207542704",
+    "Content-Type": "application/json"
+ }
+});
+
 //UserInfo Instance
 const userInfo = new UserInfo({
   nameSelector: ".profile__title",
@@ -28,10 +36,8 @@ const userInfo = new UserInfo({
 });
 
 //Section Class Instance
-
 const cardSection = new Section(
   {
-    items: [],
     renderer: (item) => {
       const cardElement = createCard(item);
       return cardElement;
@@ -40,8 +46,18 @@ const cardSection = new Section(
   ".cards__list"
 );
 
+api.getAppInfo()
+  .then(([userData, cards]) => {
+    userInfo.setUserInfo({
+      name: userData.name,
+      job: userData.about,
+    });
+    cardSection.renderItems(cards); // ✅ now from API
+  })
+  .catch(err => console.error(err));
+
 function createCard(data) {
-  const card = new Card(data, cardTemplateSelector, handleImageClick);
+  const card = new Card(data, cardTemplateSelector, handleImageClick, handleDeleteClick, handleLikeClick);
   return card.getView();
 }
 
@@ -51,12 +67,81 @@ imagePopup.setEventListeners();
 
 // Edit Profile Popup
 const editProfilePopup = new PopupWithForm("#modal-edit", (formData) => {
-  userInfo.setUserInfo({
+  editProfilePopup.renderLoading(true);
+  api.updateUserInfo({
     name: formData["title"],
-    job: formData["description"],
-  });
+    about: formData["description"],
+  })
+  .then((updatedUser) => {
+    userInfo.setUserInfo({
+      name: updatedUser.name,
+      job: updatedUser.about,
+    });
+    editProfilePopup.close();
+  })
+  .catch((err) => console.error(err))
+  .finally(() => {
+      editProfilePopup.renderLoading(false);
+});
 });
 editProfilePopup.setEventListeners();
+
+// AvatarPopup instance
+const avatarPopup = new PopupWithForm("#modal-avatar", (formData) => {
+  avatarPopup.renderLoading(true);
+  api.updateAvatar(formData.avatar)
+    .then((userData) => {
+      userInfo.setUserAvatar(userData.avatar); // update DOM
+      avatarPopup.close();
+    })
+    .catch((err) => console.error(err))
+    .finally(() => {
+      avatarPopup.renderLoading(false);
+    });
+});
+avatarPopup.setEventListeners();
+
+avatarEditButton.addEventListener("click", () => {
+  avatarPopup.open();
+});
+
+//DeletePopup Instance
+let currentCardId = null;
+let currentCardElement = null;
+
+const deletePopup = new PopupWithConfirmation("#delete-card-popup", (formData) => {
+  api.deleteCard(currentCardId)
+    .then(() => {
+      currentCardElement.remove(); // remove the card from the DOM
+      deletePopup.close();
+    })
+    .catch((err) => console.error(err));
+});
+deletePopup.setEventListeners();
+
+function handleDeleteClick(cardId, cardElement) {
+  currentCardId = cardId;
+  currentCardElement = cardElement;
+  deletePopup.open();
+}
+
+//handle-Like Click instance
+
+function handleLikeClick(cardId, likeButton) {
+  if (likeButton.classList.contains("card__like-button_active")) {
+    api.removeLike(cardId)
+      .then((updatedCard) => {
+        likeButton.classList.remove("card__like-button_active");
+      })
+      .catch((err) => console.error(err));
+  } else {
+    api.addLike(cardId)
+      .then((updatedCard) => {
+        likeButton.classList.add("card__like-button_active");
+      })
+      .catch((err) => console.error(err));
+  }
+}
 
 //FormValidator Class Instance
 const editFormValidator = new FormValidator(settings, editProfileFormElement);
@@ -100,26 +185,5 @@ editButton.addEventListener("click", () => {
   editProfilePopup.open();
 });
 
-//API Instance And Method Calls
-const api = new Api({
-  baseUrl: "https://around-api.en.tripleten-services.com/v1",
- headers: {
-    authorization: "5cdcdfef-c3b6-49d6-830b-7f0207542704",
-    "Content-Type": "application/json"
- }
-});
 
-api.getAppInfo()
-.then(([userData, cards]) => {
-    // set user info
-    userInfo.setUserInfo({
-      name: userData.name,
-      job: userData.about
-    });
 
-    // render cards
-    cardSection.renderItems(cards);
-  })
-  .catch((err) => {
-    console.error(err);
-  });

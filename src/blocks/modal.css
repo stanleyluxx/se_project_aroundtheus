@@ -1,3 +1,45 @@
+/*modal avatar edit*/
+.modal__avatar-container {
+  background-color: #ffffff;
+  border: 1px;
+  border-radius: 10px;
+  margin: auto;
+  border-color: #000000;
+  width: 430px;
+  height: 272px;
+  position: relative;
+}
+
+.modal__edit-title {
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29.05px;
+  color: #000000;
+  margin: 34px 36px 45px;
+}
+
+.modal__form_type_avatar {
+  gap: 48px;
+}
+
+.modal__avatar-submit {
+  width: 358px;
+  height: 50px;
+  border-radius: 2px;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 18px;
+}
+
+.modal__avatar-submit:hover {
+  opacity: 0.8;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+
 /*modal profile section*/
 .modal {
   position: fixed;
@@ -233,8 +275,44 @@
   transition-timing-function: linear;
 }
 
-/* modal image */
+/* modal delete */
+.modal__delete-container {
+  background-color: #ffffff;
+  border: 1px;
+  border-radius: 10px;
+  margin: auto;
+  border-color: #000000;
+  width: 430px;
+  height: 181px;
+  position: relative;
+}
 
+.modal__delete-title {
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 900;
+  size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000000;
+  top: 34px;
+  left: 34px;
+  position: absolute;
+}
+
+.modal__delete-button {
+  background-color: #000000;
+  color: #ffffff;
+  width: 358px;
+  height: 50px;
+  top: 95px;
+  bottom: 36px;
+  left: 36px;
+  right: 36px;
+  border-radius: 2px;
+  position: absolute;
+}
+
+/* modal image */
 .modal_type-image {
   display: flex;
   align-items: center;
@@ -280,7 +358,6 @@
 }
 
 /* Error Styling */
-
 .modal__error {
   position: absolute;
   display: block;
