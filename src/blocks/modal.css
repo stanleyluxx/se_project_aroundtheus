@@ -19,20 +19,6 @@
   margin: 34px 36px 45px;
 }
 
-.modal__form_type_avatar {
-  gap: 48px;
-}
-
-.modal__avatar-submit {
-  width: 358px;
-  height: 50px;
-  border-radius: 2px;
-  background-color: #000000;
-  color: #ffffff;
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 18px;
-}
-
 .modal__avatar-submit:hover {
   opacity: 0.8;
   transition-property: opacity;
