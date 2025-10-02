@@ -49,21 +49,21 @@ deleteCard(cardId) {
   return fetch(`${this._baseUrl}/cards/${cardId}`, {
     method: "DELETE",
     headers: this._headers,
-  }).then(this._checkResponse);
+  }).then(this._handleResponse);
 }
 
 addLike(cardId) {
   return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
     method: "PUT",
     headers: this._headers,
-  }).then(this._checkResponse);
+  }).then(this._handleResponse);
 }
 
 removeLike(cardId) {
   return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
     method: "DELETE",
     headers: this._headers,
-  }).then(this._checkResponse);
+  }).then(this._handleResponse);
 }
 
 updateAvatar(avatarUrl) {
@@ -73,7 +73,7 @@ updateAvatar(avatarUrl) {
     body: JSON.stringify({
       avatar: avatarUrl,
     }),
-  }).then(this._checkResponse);
+  }).then(this._handleResponse);
 }
 
 }

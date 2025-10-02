@@ -33,6 +33,7 @@ const api = new Api({
 const userInfo = new UserInfo({
   nameSelector: ".profile__title",
   jobSelector: ".profile__description",
+  avatarSelector: ".profile__avatar"
 });
 
 //Section Class Instance
@@ -52,7 +53,8 @@ api.getAppInfo()
       name: userData.name,
       job: userData.about,
     });
-    cardSection.renderItems(cards); // ✅ now from API
+    cardSection.renderItems(cards);
+    userInfo.setUserAvatar(userData.avatar);
   })
   .catch(err => console.error(err));
 
