@@ -418,6 +418,25 @@
     top: -30px;
     right: -30px;
   }
+
+  .modal__avatar-container {
+    width: 282px;
+    height: 322px;
+  }
+
+  .modal__edit-title {
+    font-size: 18px;
+  }
+
+  .modal__delete-container {
+    width: 282px;
+    height: 222px;
+  }
+
+  .modal__delete-button {
+    width: 200px;
+
+  }
 }
 
 @media screen and (max-width: 339px) {
